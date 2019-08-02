@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<link rel="stylesheet" href="main.css" type="text/css">
+<link 
+	href="https://free.bboxtype.com/embedfonts/?family=FiraSans:500,700"
+	rel="stylesheet">
+
+<title>Gardening Blog Post</title>
+</head>
+<body>
+
+
+	<div th:replace="fragments/navbar :: navbar" ></div>
+	<div id="banner" class="jumbotron";>
+		<style th:inline="text">
+body {
+	background: url([[@{/grass\ background.jpeg}]]) center center/cover
+		no-repeat;;
+}
+</style>
+		<div class="container">
+			<h1 class="display-4 firahead">Green Joy</h1>
+			<p id="readme" class="lead fira">Tiny or expansive, gardens bring
+				us an exciting chance to create.</p>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-6">
+			<div class="card" style="width: 24rem;">
+				<img th:src="@{/flowers.jpeg}" class="card-img-top" alt="..." />
+				<div class="card-body">
+					<h5 class="card-title">Be Inspired</h5>
+					<p class="card-text">See some of the world's most incredible
+						gardens.</p>
+					<a
+						href="https://www.tripstodiscover.com/22-of-the-worlds-most-magnificent-gardens/"
+						class="btn btn-primary">Click Here</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-6">
+			<div class="card" style="width: 24rem;">
+				<img th:src="@{/waterandplants.jpeg}" class="card-img-top" alt="...">
+				<div class="card-body" >
+					<h5 class="card-title">Gardening Adventures</h5>
+					<p  class="card-text">Want to learn about our gardening
+						adventures this summer?</p>
+					<a th:href="@{/myblog}" class="btn btn-primary" >Visit Our Blog</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="jumbotron">
+		<h1 class="display-4 firahead">How do you garden?</h1>
+		<p id="seeblogs" class="lead fira">Share your tips here. We'd love
+			to hear your stories, pest-prevention tricks, or strategies for those
+			of us with limited space and time.</p>
+		<hr class="my-4">
+		<p><h1 class="firahead">Blog Entries
+		</h1>
+		<div id="seeblogs" th:each="entry : *{entries}">
+			<h3 class="fira" th:text="${entry.title}"></h3>
+			<p class="fira" th:text="${entry.content}"></p>
+			<a class="fira" th:href="@{/entry/{id}(id = ${entry.id})}">edit</a><br />
+			<a class="fira" th:href="@{/entry/delete/{id}(id = ${entry.id})}">delete</a>
+		</div>
+		</p>
+		<a class="btn btn-primary btn-lg" href="/entry" role="button"> New
+			Post</a>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+
+</body>
+</html>

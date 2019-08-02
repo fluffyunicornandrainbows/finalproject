@@ -1,0 +1,56 @@
+
+.jumbotron{
+	background: url([[@{/grass\ background.jpeg}]])
+                center center / cover no-repeat;
+	
+}
+.firahead {
+    font-family: 'Fira Sans', sans-serif !important;
+    font-weight: bold;
+    color: #FFFFFF;
+    letter-spacing: .05em;
+    text-shadow:
+  		-1px -1px 0 #000,
+  		1px -1px 0 #000,
+  		-1px 1px 0 #000,
+  		1px 1px 0 #000;
+}
+
+.fira {
+    font-family: 'Fira Sans', sans-serif !important;
+    font-weight: 500;
+    color: #FFFFFF;
+    text-shadow:
+  		-1px -1px 0 #000,
+  		1px -1px 0 #000,
+  		-1px 1px 0 #000,
+  		1px 1px 0 #000;
+}
+
+#seeblogs{
+	padding-left: 1em;
+	background-color: #030;
+}
+.blogcontent1{
+	font-family: 'Fira Sans', sans-serif !important;
+}
+.blogcontent{
+	
+	font-family: 'Helvetica', sans-serif;
+}
+
+#readme{
+	color: #030;
+	text-shadow: none;
+}
+
+#logo{
+	
+	width: 43px;
+	height:30px;
+	
+}
+
+#prettynavbar{
+	color: #9F3;
+}

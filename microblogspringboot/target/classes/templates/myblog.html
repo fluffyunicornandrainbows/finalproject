@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<link rel="stylesheet" href="main.css" type="text/css">
+<link
+	href="https://free.bboxtype.com/embedfonts/?family=FiraSans:500,700"
+	rel="stylesheet">
+
+<title>My Blog Entries</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+</head>
+<body>
+	<div th:replace="fragments/navbar :: navbar"></div>
+	<style th:inline="text">
+body {
+	background: url([[@{/grass\ background.jpeg}]]) center center/cover
+		no-repeat;;
+}
+</style>
+	<div class="card mb-3">
+		<img th:src="@{/moth.jpeg}" class="card-img-top" alt="...">
+		<div class="card-body">
+			<h5 class="card-title">The Moth Tragedy</h5>
+			<p class="card-text">Moths are beautiful zucchini plant killers.
+				I spent most of last summer growing a single zucchini plant. By the
+				end of August, we'd eaten a total of seven zucchinis. This year, I
+				started the seedlings early, planted with plenty of room, and had a
+				beautiful plant producing zucchini by June. Then, the moths came.
+				They lay eggs near the plant. The larvae burrow inside the stems and
+				eat from the center. Rememdies include injecting an insecticide with
+				a hypodermic needle. I ended up cutting off most of the stems, and
+				it's slowly regenerating. Moral of the story, BUY A MOTH NET!!</p>
+			<p class="card-text">
+				<small class="text-muted"></small>
+			</p>
+		</div>
+	</div>
+	<div class="card mb-3">
+		<img th:src="@{/turnipsweb.jpg}" class="card-img-top" alt="...">
+		<div class="card-body">
+			<h5 class="card-title">Beautiful Turnips</h5>
+			<p class="card-text">The turnip crop this year is amazing. Supposedly a winter
+			plant, I was nervous about planting the extra pack of these I found in the panty 
+			(I should read a blog about organizing my pantry!). I planted them in my raised bed
+			which is very handy to start seedlings in the winter, and they grew quickly. We love
+			to eat them fried, they're spicy raw, and the most recent project included turnip soup. </p>
+			<p class="card-text">
+				<small class="text-muted">Last updated 3 mins ago</small>
+			</p>
+		</div>
+	</div>
+
+</body>
